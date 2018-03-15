@@ -9,7 +9,7 @@ RUN apt-get -y install \
             htop \
             sudo \
             supervisor \
-	    software-properties-common \
+	        software-properties-common \
     && apt-get autoclean
 
 RUN add-apt-repository ppa:gluster/glusterfs-3.12
@@ -18,13 +18,14 @@ RUN apt-get -y install \
         libpam-sss libnss-sss \
         ldap-utils \
         sssd-tools \
-	glusterfs-client \
-	glusterfs-server \
+	    glusterfs-client \
+	    glusterfs-server \
         openssh-server 
 
 #ADD sssd.conf /etc/sssd/sssd.conf
 #ADD krb5.conf /etc/krb5.conf
 #RUN chmod 0600 /etc/sssd/sssd.conf
+RUN rm /etc/krb5.conf
 RUN mkdir -p /var/run/sshd
 RUN echo "session required    pam_mkhomedir.so skel=/etc/skel umask=0077" >> /etc/pam.d/common-session
 
