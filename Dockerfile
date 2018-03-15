@@ -26,6 +26,7 @@ RUN apt-get -y install \
 #ADD krb5.conf /etc/krb5.conf
 #RUN chmod 0600 /etc/sssd/sssd.conf
 RUN rm /etc/krb5.conf
+RUN mkdir -p /etc/krb5
 RUN mkdir -p /var/run/sshd
 RUN echo "session required    pam_mkhomedir.so skel=/etc/skel umask=0077" >> /etc/pam.d/common-session
 
