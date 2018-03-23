@@ -13,7 +13,8 @@ RUN apt-get -y install \
     && apt-get autoclean
 
 RUN add-apt-repository ppa:gluster/glusterfs-3.12
-RUN sudo add-apt-repository ppa:gluster/nfs-ganesha-2.6
+RUN add-apt-repository ppa:gluster/nfs-ganesha-2.6
+RUN add-apt-repository ppa:gluster/libntirpc-1.6
 RUN apt-get update
 RUN apt-get -y install \
         krb5-user samba sssd ntp \
