@@ -36,6 +36,11 @@ RUN mkdir -p /var/run/sshd
 RUN echo "session required    pam_mkhomedir.so skel=/etc/skel umask=0077" >> /etc/pam.d/common-session
 
 EXPOSE 22
+EXPOSE 135
+EXPOSE 137
+EXPOSE 138
+EXPOSE 139
+EXPOSE 445
 
 COPY etc/supervisor /etc/supervisor
 COPY etc/samba.conf /etc/samba.conf
