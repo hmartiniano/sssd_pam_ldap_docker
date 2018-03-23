@@ -13,6 +13,8 @@ RUN apt-get -y install \
     && apt-get autoclean
 
 RUN add-apt-repository ppa:gluster/glusterfs-3.12
+RUN sudo add-apt-repository ppa:gluster/nfs-ganesha-2.6
+RUN apt-get update
 RUN apt-get -y install \
         krb5-user samba sssd ntp \
         libpam-sss libnss-sss \
@@ -20,6 +22,8 @@ RUN apt-get -y install \
         sssd-tools \
 	    glusterfs-client \
 	    glusterfs-server \
+        nfs-ganesha \ 
+        ctdb \ 
         openssh-server 
 
 #ADD sssd.conf /etc/sssd/sssd.conf
@@ -33,5 +37,6 @@ RUN echo "session required    pam_mkhomedir.so skel=/etc/skel umask=0077" >> /et
 EXPOSE 22
 
 COPY etc/supervisor /etc/supervisor
+COPY etc/samba.conf /etc/samba.conf
 CMD ["/usr/bin/supervisord"]
 
