@@ -21,11 +21,11 @@ RUN apt-get -y install \
         libpam-sss libnss-sss \
         ldap-utils \
         sssd-tools \
-	    glusterfs-client \
-	    glusterfs-server \
+        glusterfs-client \
+        glusterfs-server \
         nfs-ganesha \ 
         ctdb \ 
-        rsyslog
+        rsyslog \
         openssh-server 
 
 #ADD sssd.conf /etc/sssd/sssd.conf
