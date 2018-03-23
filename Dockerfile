@@ -44,6 +44,6 @@ EXPOSE 139
 EXPOSE 445
 
 COPY etc/supervisor /etc/supervisor
-COPY etc/samba.conf /etc/samba.conf
+COPY etc/smb.conf /etc/smb.conf
 CMD ["/usr/bin/supervisord"]
 
