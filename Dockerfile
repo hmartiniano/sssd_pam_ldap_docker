@@ -25,6 +25,7 @@ RUN apt-get -y install \
 	    glusterfs-server \
         nfs-ganesha \ 
         ctdb \ 
+        rsyslog
         openssh-server 
 
 #ADD sssd.conf /etc/sssd/sssd.conf
