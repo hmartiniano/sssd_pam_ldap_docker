@@ -9,8 +9,8 @@ RUN apt-get -y install \
             htop \
             sudo \
             supervisor \
-	        software-properties-common \
-    && apt-get autoclean
+            software-properties-common \
+            && apt-get autoclean
 
 RUN add-apt-repository ppa:gluster/glusterfs-3.12
 RUN add-apt-repository ppa:gluster/nfs-ganesha-2.6
@@ -44,6 +44,6 @@ EXPOSE 139
 EXPOSE 445
 
 COPY etc/supervisor /etc/supervisor
-COPY etc/smb.conf /etc/smb.conf
+COPY etc/samba/smb.conf /etc/samba/smb.conf
 CMD ["/usr/bin/supervisord"]
 
